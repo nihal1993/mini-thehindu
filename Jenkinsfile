@@ -6,6 +6,11 @@ pipeline {
         sh 'docker run -v $(pwd):/src --workdir /src codeclimate/codeclimate'
         
       }
+      stage('code climate') {
+      steps {
+        sh 'codeclimate analyze'
+        
+      }
     }
   }
 }
